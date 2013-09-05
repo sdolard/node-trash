@@ -1,0 +1,33 @@
+{
+	"author": "Sébastien Dolard <sdolard@gmail.com>",
+	"name": "trash",
+	"description": "Move files to trash instead of delete them",
+	"version": "0.0.1",
+	"homepage": "https://github.com/sdolard/node-trash",
+	"keywords": [
+		"trash",
+		"recycle bin"
+	],
+	"main": "lib/trash",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/sdolard/node-trash.git"
+	},
+	"scripts": {
+		"test": "mocha",
+		"posttest": "bin/trash -r cli-hide-valid -o \"properties: false, maxlen: 0, debug: false, vars: false, passfail: false, unparam: false, stupid: false\" -p \"describe,it\" -R example/ lib/ test/trash_lib.js test/trash_bin.js"
+	},
+	"bin": {
+		"trash": "./bin/trash"
+	},
+	"engines": {
+		"node": ">= 0.10.0"
+	},
+	"dependencies": {
+		"commander": "1.3.x"
+	},
+	"devDependencies": {
+		"mocha": "1.12.x"
+	},
+	"gypfile": true
+}
